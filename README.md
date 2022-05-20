@@ -4,6 +4,7 @@
 [![Software License][ico-license]](LICENSE)
 [![Scrutinizer Code Quality][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
+[![Build][ico-build]][link-build]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 With this package it will be easy for you to declare all the cookies used on your website, asking for consent through a banner that will be activated automatically through a Laravel Middleware. 
@@ -62,10 +63,12 @@ php artisan vendor:publish --provider="W3designweb\LaravelCookieConsent\LaravelC
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-scrutinizer]: https://scrutinizer-ci.com/g/w3designweb/laravel-cookie-consent/badges/quality-score.png?b=master
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/w3designweb/laravel-cookie-consent.svg?style=flat-square
+[ico-build]: https://scrutinizer-ci.com/g/w3designweb/laravel-cookie-consent/badges/build.png?b=master
 [ico-downloads]: https://img.shields.io/packagist/dt/w3designweb/laravel-cookie-consent.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/w3designweb/laravel-cookie-consent
 [link-scrutinizer]: https://scrutinizer-ci.com/g/w3designweb/laravel-cookie-consent/?branch=master
 [link-code-quality]: https://scrutinizer-ci.com/g/w3designweb/laravel-cookie-consent
+[link-build]: https://scrutinizer-ci.com/g/w3designweb/laravel-cookie-consent/build-status/master
 [link-downloads]: https://packagist.org/packages/w3designweb/laravel-cookie-consent
 [link-author]: https://github.com/w3designweb
