@@ -4,6 +4,7 @@
     "keywords": ["laravel", "cookie", "consent", "package", "cookie banner", "cookie law", "GDPR", "cookie consent"],
     "homepage": "https://github.com/w3designweb/cookie-consent",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Michele Damo",
@@ -12,7 +13,12 @@
             "role": "Developer"
         }
     ],
-    "type": "library",
+    "require": {
+        "php": ">=7.2",
+        "illuminate/routing": "^6|^7|^8|^9",
+        "illuminate/session": "^6|^7|^8|^9",
+        "illuminate/support": "^6|^7|^8|^9"
+    },
 	"autoload": {
         "psr-4": {
             "W3designweb\\LaravelCookieConsent\\": "src"
