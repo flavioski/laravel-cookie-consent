@@ -1,5 +1,6 @@
 <?php
 
+$COOKIE_CONSENT_NAME = env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent');
 $COOKIE_LIFETIME = 30 * 6; // In days (Default 30 * 6 = 6 months)
 $COOKIE_LIFETIME_UM = 'months';
 
@@ -13,21 +14,21 @@ return [
 	 * The name of the cookie in which we store if the user
 	 * has agreed to accept the conditions.
 	 */
-	'cookie_name' => env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent'),
+	'cookie_name' => $COOKIE_CONSENT_NAME,
 
 	/*
 	 * Set the cookie duration in days.
 	 */
-	'cookie_lifetime' => $COOKIE_LIFETIME, // Six months
+	'cookie_lifetime' => $COOKIE_LIFETIME,
 
     /*
      * 4 types of cookie
      */
 	'cookie_types' => [
-		'necessary' => env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_necessary',
-		'statistics' => env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_statistics',
-        'marketing' => env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_marketing',
-		'functional' => env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_functional',
+		'necessary' => $COOKIE_CONSENT_NAME.'_necessary',
+		'statistics' => $COOKIE_CONSENT_NAME.'_statistics',
+        'marketing' => $COOKIE_CONSENT_NAME.'_marketing',
+		'functional' => $COOKIE_CONSENT_NAME.'_functional',
 	],
 
     /*
@@ -53,7 +54,7 @@ return [
                 'domain' => str_replace(['http://', 'https://'], '', env('APP_URL')),
             ],
             // Laravel Cookie Consent
-            env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent') => [
+            $COOKIE_CONSENT_NAME => [
                 'duration' => [
                     'value' => $COOKIE_LIFETIME,
                     'um' => $COOKIE_LIFETIME_UM
@@ -61,7 +62,7 @@ return [
                 'provider' => env('APP_NAME'),
                 'domain' => str_replace(['http://', 'https://'], '', env('APP_URL')),
             ],
-            env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_statistics' => [
+            $COOKIE_CONSENT_NAME.'_statistics' => [
                 'duration' => [
                     'value' => $COOKIE_LIFETIME,
                     'um' => $COOKIE_LIFETIME_UM
@@ -69,7 +70,7 @@ return [
                 'provider' => env('APP_NAME'),
                 'domain' => str_replace(['http://', 'https://'], '', env('APP_URL')),
             ],
-            env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_marketing' => [
+            $COOKIE_CONSENT_NAME.'_marketing' => [
                 'duration' => [
                     'value' => $COOKIE_LIFETIME,
                     'um' => $COOKIE_LIFETIME_UM
@@ -77,7 +78,7 @@ return [
                 'provider' => env('APP_NAME'),
                 'domain' => str_replace(['http://', 'https://'], '', env('APP_URL')),
             ],
-            env('COOKIE_CONSENT_NAME', 'laravel_cookie_consent').'_functions' => [
+            $COOKIE_CONSENT_NAME.'_functions' => [
                 'duration' => [
                     'value' => $COOKIE_LIFETIME,
                     'um' => $COOKIE_LIFETIME_UM
