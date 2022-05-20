@@ -86,52 +86,16 @@ return [
                 'provider' => env('APP_NAME'),
                 'domain' => str_replace(['http://', 'https://'], '', env('APP_URL')),
             ],
-            // Google reCAPTCHA
-            '_GRECAPTCHA' => [
-                'duration' => [
-                    'value' => 6,
-                    'um' => 'months'
-                ],
-                'provider' => 'Google reCAPTCHA',
-                'domain' => 'www.google.com',
-            ],
+            // Insert your necessary cookie here
         ],
         'statistics' => [
-            // Google Analytics
-            '_ga' => [
-                'duration' => [
-                    'value' => 2,
-                    'um' => 'years'
-                ],
-                'provider' => 'Google Analytics',
-                'domain' => str_replace(['http://', 'https://'], '', str_replace('www', '', env('APP_URL'))),
-            ],
-            '_gid' => [
-                'duration' => [
-                    'value' => 1,
-                    'um' => 'day'
-                ],
-                'provider' => 'Google Analytics',
-                'domain' => str_replace(['http://', 'https://'], '', str_replace('www', '', env('APP_URL'))),
-            ],
-            '_ga_*' => [
-                'duration' => [
-                    'value' => 2,
-                    'um' => 'years'
-                ],
-                'provider' => 'Google Analytics',
-                'domain' => str_replace(['http://', 'https://'], '', str_replace('www', '', env('APP_URL'))),
-            ],
-            '_gat_*' => [
-                'duration' => [
-                    'value' => 1,
-                    'um' => 'minute'
-                ],
-                'provider' => 'Google Analytics',
-                'domain' => str_replace(['http://', 'https://'], '', str_replace('www', '', env('APP_URL'))),
-            ],
+            // Insert your statistics cookie here
         ],
-        'marketing' => [],
-        'functional' => [],
+        'marketing' => [
+            // Insert your marketing cookie here
+        ],
+        'functional' => [
+            // Insert your functional cookie here
+        ],
     ]
 ];
