@@ -36,8 +36,9 @@ window.laravelCookieConsent = (function () {
         else {
             let allCookieSelected = Object.values(COOKIE_TYPES);
             allCookieSelected.forEach(cookie_name => {
-                if(cookie_name !== 'laravel_cookie_consent_necessary')
+                if(cookie_name !== 'laravel_cookie_consent_necessary') {
                     setCookie(cookie_name, COOKIE_VALUE_YES, COOKIE_LIFETIME);
+                }
             });
         }
         setCookieConsentClose();
@@ -51,7 +52,9 @@ window.laravelCookieConsent = (function () {
                 if(COOKIE_SELECTED.includes(cookie_name)) {
                     setCookie(cookie_name, COOKIE_VALUE_YES, COOKIE_LIFETIME);
                 }
-                else removeCookie(cookie_name);
+                else {
+                    removeCookie(cookie_name);
+                }
             }
         });
         setCookieConsentClose();
@@ -68,7 +71,9 @@ window.laravelCookieConsent = (function () {
         cookieBanner.classList.add("__cookie-consent-closed");
     }
     function openCookieDialog() {
-        if(cookieBanner.classList.contains('__cookie-consent-closed')) cookieBanner.classList.remove("__cookie-consent-closed");
+        if(cookieBanner.classList.contains('__cookie-consent-closed')) {
+            cookieBanner.classList.remove("__cookie-consent-closed");
+        }
     }
     function openCookieDescription() {
         cookieDescriptionModal.classList.add('open');
@@ -81,7 +86,9 @@ window.laravelCookieConsent = (function () {
         for (let i = 0; i < accordions.length; i++) {
             let isOpen = accordions[i].classList.contains('open');
             accordions[i].classList.remove('open');
-            if(!isOpen && accordions[i].dataset.type === type) accordions[i].classList.add('open');
+            if(!isOpen && accordions[i].dataset.type === type) {
+                accordions[i].classList.add('open');
+            }
         }
     }
     function refreshPage() {
@@ -98,16 +105,16 @@ window.laravelCookieConsent = (function () {
     if(cookieExists(COOKIE_CONSENT_NAME)) {
         closeCookieDialog();
     }
-    if(acceptButton) acceptButton.addEventListener('click', consentSelectedCookies);
-    if(rejectButton) rejectButton.addEventListener('click', rejectAllCookies);
-    if(saveChangesButton) saveChangesButton.addEventListener('click', saveChangesCookies);
+    if(acceptButton) { acceptButton.addEventListener('click', consentSelectedCookies); }
+    if(rejectButton) { rejectButton.addEventListener('click', rejectAllCookies); }
+    if(saveChangesButton) { saveChangesButton.addEventListener('click', saveChangesCookies); }
     for (let i = 0; i < cookieBannerOpenLinks.length; i++) {
         cookieBannerOpenLinks[i].addEventListener("click", openCookieDialog);
     }
-    if(closeButton) closeButton.addEventListener('click', closeCookieDialog);
-    if(closeRejectButton) closeRejectButton.addEventListener('click', rejectAllCookies);
-    if(closeModalButton) closeModalButton.addEventListener('click', closeCookieDescription);
-    if(manageCookieButton) manageCookieButton.addEventListener('click', openCookieDescription);
+    if(closeButton) { closeButton.addEventListener('click', closeCookieDialog); }
+    if(closeRejectButton) { closeRejectButton.addEventListener('click', rejectAllCookies); }
+    if(closeModalButton) { closeModalButton.addEventListener('click', closeCookieDescription);}
+    if(manageCookieButton){  manageCookieButton.addEventListener('click', openCookieDescription); }
     for (let i = 0; i < accordions.length; i++) {
         accordions[i].addEventListener("click", toggleAccordion);
     }
@@ -130,10 +137,18 @@ for (let k = 0; k < single_checkboxes.length; k++) {
 // CHECK A SINGLE CHECKBOX ACCEPT
 function checkSingleCheckbox(element, checked) {
     element.checked = checked;
-    if(checked) COOKIE_SELECTED.push(element.value);
-    else COOKIE_SELECTED.splice(COOKIE_SELECTED.indexOf(element.value), 1);
+    if(checked) {
+        COOKIE_SELECTED.push(element.value);
+    }
+    else {
+        COOKIE_SELECTED.splice(COOKIE_SELECTED.indexOf(element.value), 1);
+    }
     if(acceptButton) {
-        if(COOKIE_SELECTED.length > 0) acceptButton.textContent = COOKIE_BTN_LABEL_ACCEPT_SELECTED;
-        else acceptButton.textContent = COOKIE_BTN_LABEL_ACCEPT_ALL;
+        if(COOKIE_SELECTED.length > 0) {
+            acceptButton.textContent = COOKIE_BTN_LABEL_ACCEPT_SELECTED;
+        }
+        else {
+            acceptButton.textContent = COOKIE_BTN_LABEL_ACCEPT_ALL;
+        }
     }
 }

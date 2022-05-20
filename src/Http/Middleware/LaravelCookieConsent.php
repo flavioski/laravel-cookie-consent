@@ -85,7 +85,7 @@ class LaravelCookieConsent
 	 *
 	 * @return int
 	 */
-	protected function getLastClosingBodyTagPosition(string $content = ''): int
+	protected function getLastClosingBodyTagPosition(string $content = ''): int|false
     {
 		return strripos($content, '</body>');
 	}
