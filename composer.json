@@ -2,7 +2,7 @@
     "name": "w3designweb/laravel-cookie-consent",
     "description": "This package for Laravel allows you to manage user cookies consents in compliance with privacy regulations.",
     "keywords": ["laravel", "cookie", "consent", "package", "cookie banner", "cookie law", "GDPR", "cookie consent"],
-    "homepage": "https://github.com/w3designweb/cookie-consent",
+    "homepage": "https://github.com/w3designweb/laravel-cookie-consent",
     "license": "MIT",
     "type": "library",
     "authors": [
