@@ -11,6 +11,12 @@
             "email": "michele@w3design.it",
             "homepage": "https://www.w3design.it",
             "role": "Developer"
+        },
+        {
+            "name": "Flavio Pellizzer",
+            "email": "flavio@w3design.it",
+            "homepage": "https://www.w3design.it",
+            "role": "Developer"
         }
     ],
     "require": {
